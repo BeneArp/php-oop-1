@@ -4,16 +4,24 @@
         public $title;
         public $subtitle;
         public $duration;
-        public $lenguage;
-        public $geners;
-        public $actors;
+        public $language;
+        public $geners = [];
+        public $actors = [];
         public $relaseYear;
 
 
-        function __construct($_title, $_lenguage, $_geners, $_relaseYear){
+        function __construct($_title, $_language, $_geners, $_relaseYear){
             $this->title = $_title;
-            $this->lenguage = $_lenguage;
+            $this->language = $_language;
             $this->geners = $_geners;
             $this->relaseYear = $_relaseYear;
+        }
+
+        public function getGeners(){
+        
+            foreach($this->geners as $gener){
+                echo "<li>$gener</li>";
+            }
+    
         }
     }
